@@ -11,28 +11,54 @@ let userDataInp = () => {
     }
     
     let popUpHoistingDone = (text) => {
-        let popUpDone = document.querySelector('.successPopUp');
+        
+        let popUpDone = document.createElement('div');
+        let popUpCross = document.createElement('div');
+
+        popUpDone.classList.add('successPopUp');
         popUpDone.classList.add('activeDone');
         popUpDone.classList.remove('activeFail');
         popUpDone.innerHTML = text;
+        popUpCross.classList.add('closeCross');
+        popUpDone.appendChild(popUpCross);
+
+        popUpCross.onclick = () => {
+            popUpDone.remove()
+        }
+
+        document.body.appendChild(popUpDone);
+
         setTimeout(
             () => {
-                popUpDone.classList.remove('activeDone')
+                popUpDone.remove();
             },
-            3000
+            5000
         )
+
     }
     
     let popUpHoistingFail = (text) => {
-        let popUpDone = document.querySelector('.successPopUp');
+        let popUpDone = document.createElement('div');
+        let popUpCross = document.createElement('div');
+
+        popUpDone.classList.add('successPopUp');
         popUpDone.classList.add('activeFail');
         popUpDone.classList.remove('activeDone');
         popUpDone.innerHTML = text;
+        popUpCross.classList.add('closeCross');
+        popUpDone.appendChild(popUpCross);
+
+        popUpCross.onclick = () => {
+            popUpDone.remove()
+        }
+
+        document.body.appendChild(popUpDone);
+
         setTimeout(
             () => {
-                popUpDone.classList.remove('activeFail')
+                popUpDone.remove();
             },
-            3000
+            5000
         )
     }
 
@@ -55,3 +81,4 @@ let userDataInp = () => {
     }
     
 }
+

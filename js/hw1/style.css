@@ -3,6 +3,7 @@ html {
 }
 
 .successPopUp {
+    /* display: inline-flex; */
     position: absolute;
     padding: 2em 5em;
     top: 50%;
@@ -13,6 +14,33 @@ html {
     transform: translate(-50%, -50%);
     border-radius: 1em;
     display: none;
+    background-color: rgb(255, 182, 182);
+}
+
+.successPopUp .closeCross {
+    position: absolute;
+    background-color: rgba(0, 0, 0, 0.089);
+    top: 20px;
+    right: 30px;
+    cursor: pointer;
+}
+
+.successPopUp .closeCross::after {
+    content: '';
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 20px;
+    height: 2px;
+    transform: rotate(45deg);
+}
+
+.successPopUp .closeCross::before {
+    content: '';
+    position: absolute;
+    background-color: rgb(255, 255, 255);
+    width: 20px;
+    height: 2px;
+    transform: rotate(-45deg);
 }
 
 .form-wrapper {
