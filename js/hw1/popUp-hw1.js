@@ -27,12 +27,12 @@ let userSignIn = () => {
 
         document.body.appendChild(popUpDone);
 
-        // setTimeout(
-        //     () => {
-        //         popUpDone.remove();
-        //     },
-        //     5000
-        // )
+        setTimeout(
+            () => {
+                popUpDone.remove();
+            },
+            5000
+        )
     }
     
     let userName = document.getElementById('userName').value;
@@ -56,6 +56,4 @@ let userSignIn = () => {
         let background = 'activeFail';
         popUpHoisting(text, background);
     }
-    
 }
-
