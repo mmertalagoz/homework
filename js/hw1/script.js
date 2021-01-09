@@ -1,61 +1,72 @@
-const credentials = {
-    name: 'admin',
-    password: 'qwerty',
+'use strict';
+
+// task-1
+const namesArr = [
+    'Капуста',
+    'Репа',
+    'Редиска',
+    'Морковка',
+]
+
+console.log(namesArr.join(' | '))
+
+// task-2
+let namesStr = 'Вася;Петя;Вова;Олег';
+
+console.log(namesStr.split(';'))
+
+// task-3
+let sayHello = (name) => {
+    console.log(`Привет ${name}!`)
 }
 
-let userSignIn = () => {
+sayHello('Усы Якубовича')
 
-    let clearInp = () => {
-        document.getElementById('userName').value = '';
-        document.getElementById('userPass').value = '';            
+// task-4
+// додумался ток до этого)) Не знаю, правильно ли использовать такое количество методов подряд. То, что массив сначала переобразуется к строке, потом обратно в массив - это норм?) Пытался через forEach, но в конце выходит каждый элемент в отдельном массиве)
+const fruits = ['яблоко', 'ананас', 'груша'];
+
+const fruitsToUpperCase = fruits.toString().toUpperCase().split(',');
+console.log(fruitsToUpperCase)
+
+// task-5 
+let addOneForAll = (...params) => {
+    let newArr = [];
+    for (let i = 0; i < params.length; i++) {
+        newArr.push(params[i] + 1);
     }
-    
-    let popUpHoisting = (text, background) => {
-        
-        let popUpDone = document.createElement('div');
-        let popUpCross = document.createElement('div');
+    console.log(newArr)
+}
 
-        popUpDone.classList.add('successPopUp');
-        popUpDone.classList.add(background);
-        popUpDone.innerHTML = text;
-        popUpCross.classList.add('closeCross');
-        popUpDone.appendChild(popUpCross);
+addOneForAll(1, 2, 3, 4)
 
-        popUpCross.onclick = () => {
-            popUpDone.remove()
+// task 6
+let getSum = (...params) => {
+    let sum = 0;
+    for (let i = 0; i <  params.length; i++) {
+       sum += params[i];
+    }
+    console.log(sum)
+}
+getSum(1, 2, 3, 4, 5, 6)
+
+//task-7 
+const originArr = [1, 'hello', 2, 3, 4, '5', '6', 7, null];
+const newArr = originArr.filter(element => typeof(element) === 'number')
+console.log(newArr)
+
+// task-8
+//  какйо-то костыльный костыль, не понял как нормально передать массив в REST аргумент.
+
+const valueArr = [0, false, null, 1];
+
+let haveTrueValue = (...prop) => {
+    for (let i = 0; i < prop.length; i++) {
+        if (prop[i] === 'false' || 'null' || '' || '0') {
+            console.log('есть фолс')
+        } else {
+            console.log('нет фолс')
         }
-
-        document.body.appendChild(popUpDone);
-
-        // setTimeout(
-        //     () => {
-        //         popUpDone.remove();
-        //     },
-        //     5000
-        // )
     }
-    
-    let userName = document.getElementById('userName').value;
-    let userPass = document.getElementById('userPass').value;
-
-    if (userName == credentials.name && userPass == credentials.password) {
-        let text = `Добро Пожаловать <br> ${userName}`;
-        let background = 'activeDone';
-        clearInp();
-        popUpHoisting(text, background);
-    } else if (userName == '') {
-        let text = 'Введите Логин';
-        let background = 'activeFail';
-        popUpHoisting(text, background);
-    } else if (userPass == '') {
-        let text = 'Введите Пароль';
-        let background = 'activeFail';
-        popUpHoisting(text, background);
-    } else {
-        let text = `Пользователь ${userName} не найден`;
-        let background = 'activeFail';
-        popUpHoisting(text, background);
-    }
-    
 }
-
+haveTrueValue(valueArr.toString())
