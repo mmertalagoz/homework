@@ -56,10 +56,9 @@ const newArr = originArr.filter(element => typeof(element) === 'number')
 console.log(newArr)
 
 // task-8
-//  какйо-то костыльный костыль, не понял как нормально передать массив в REST аргумент.
+//  тут я не смог, не могу понять как передать массив в аргумент при вызове функции(((
 
 const valueArr = ['123', 2, 3, 1];
-
 let haveTrueValue = (...prop) => {
     for (let i = 0; i < prop.length; i++) {
         if (prop[i] === 'false' || 'null' || '' || '0') {
@@ -69,9 +68,7 @@ let haveTrueValue = (...prop) => {
         }
     }
 }
-haveTrueValue(valueArr.map)
 
 
-const arr = [1, 2, 3];
-arr.forEach(function(item) {
-});
+
+
