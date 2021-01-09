@@ -58,7 +58,7 @@ console.log(newArr)
 // task-8
 //  какйо-то костыльный костыль, не понял как нормально передать массив в REST аргумент.
 
-const valueArr = [0, false, null, 1];
+const valueArr = ['123', 2, 3, 1];
 
 let haveTrueValue = (...prop) => {
     for (let i = 0; i < prop.length; i++) {
@@ -69,4 +69,9 @@ let haveTrueValue = (...prop) => {
         }
     }
 }
-haveTrueValue(valueArr.toString())
+haveTrueValue(valueArr.map)
+
+
+const arr = [1, 2, 3];
+arr.forEach(function(item) {
+});
