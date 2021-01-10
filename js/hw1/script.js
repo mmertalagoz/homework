@@ -62,23 +62,15 @@ const newArr = (...prop) => {
     return console.log(prop.filter(element => typeof (element) === 'number'))
 }
 
-
-
 // task-8
+const valueArr = ['123', '', null, false, undefined, NaN, 3, 1, {}, ];
 
-const valueArr = ['123', '', null, false, undefined, NaN, 3, 1, {},
-    [],
-];
 let haveTrueValue = (...prop) => {
     let controlValue = 0;
-    for (let i = 0; i < prop.length; i++) {
-        if (Boolean(prop[i]) === false) {
-            controlValue += 1;
-        } else {
-            controlValue += 0;
-        }
-    }
-    if (controlValue >= 1) {
-        console.log(`Количество ложных значений: ${controlValue} `)
-    } else console.log('Все значение правдивы')
+
+    prop.map((item) => {
+        (Boolean(item) === false) ? controlValue += 1: controlValue += 0
+    });
+
+    (controlValue >= 1) ? console.log(`Количество ложных значений: ${controlValue} `): console.log('Все значение правдивы');
 }
