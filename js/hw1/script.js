@@ -58,11 +58,11 @@ console.log(newArr)
 // task-8
 //  тут я не смог, не могу понять как передать массив в аргумент при вызове функции(((
 
-const valueArr = ['123', '', null, false,  3, 1];
+const valueArr = ['123', '', null, false, undefined, NaN, 3, 1, {}, [], ];
 let haveTrueValue = (...prop) => {
     let controlValue = 0;
     for (let i = 0; i < prop.length; i++) {
-        if (prop[i] === false || prop[i] === null || prop[i] === '' || prop[i] === 0) {
+        if (Boolean(prop[i]) === false) {
             controlValue += 1;
         } else {
             controlValue += 0;
