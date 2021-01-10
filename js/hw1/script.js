@@ -43,8 +43,8 @@ addOneForAll(1, 2, 3, 4)
 // task 6
 let getSum = (...params) => {
     let sum = 0;
-    for (let i = 0; i <  params.length; i++) {
-       sum += params[i];
+    for (let i = 0; i < params.length; i++) {
+        sum += params[i];
     }
     console.log(sum)
 }
@@ -52,23 +52,25 @@ getSum(1, 2, 3, 4, 5, 6)
 
 //task-7 
 const originArr = [1, 'hello', 2, 3, 4, '5', '6', 7, null];
-const newArr = originArr.filter(element => typeof(element) === 'number')
+const newArr = originArr.filter(element => typeof (element) === 'number')
 console.log(newArr)
 
 // task-8
 //  тут я не смог, не могу понять как передать массив в аргумент при вызове функции(((
 
-const valueArr = ['123', 2, 3, 1];
+const valueArr = ['123', 1, 3, 1];
 let haveTrueValue = (...prop) => {
+    let controlValue = 0;
     for (let i = 0; i < prop.length; i++) {
-        if (prop[i] === 'false' || 'null' || '' || '0') {
-            console.log('есть фолс')
+        if (prop[i] === false || prop[i] === null || prop[i] === '' || prop[i] === 0) {
+            controlValue += 1;
         } else {
-            console.log('нет фолс')
+            controlValue += 0;
         }
     }
+    if (controlValue >= 1) {
+        console.log('Есть ложное значение')
+    } else console.log('Все значение правдивы')
 }
 
-
-
-
+haveTrueValue(...valueArr)
