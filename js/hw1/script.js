@@ -1,6 +1,5 @@
 'use strict';
 
-// task-1
 const namesArr = [
     'Капуста',
     'Репа',
@@ -8,57 +7,68 @@ const namesArr = [
     'Морковка',
 ]
 
-console.log(namesArr.join(' | '))
-
-// task-2
 let namesStr = 'Вася;Петя;Вова;Олег';
 
-console.log(namesStr.split(';'))
+
+// task-1
+let joinNames = (...prop) => {
+    console.log(prop.join(' | '))
+}
+
+// task-2
+let addNamesArr = (names) => {
+    console.log(names.split(';'))
+}
+
 
 // task-3
 let sayHello = (name) => {
     console.log(`Привет ${name}!`)
 }
 
-sayHello('Усы Якубовича')
-
 // task-4
-// додумался ток до этого)) Не знаю, правильно ли использовать такое количество методов подряд. То, что массив сначала переобразуется к строке, потом обратно в массив - это норм?) Пытался через forEach, но в конце выходит каждый элемент в отдельном массиве)
+
+// додумался еще таким, более "императивным" подходом :D. Не знаю, правильно ли использовать такое количество методов подряд. То, что массив сначала переобразуется к строке, потом обратно в массив - это норм?) Ниже через map сделал.
+// const fruitsToUpperCase = fruits.toString().toUpperCase().split(',');
+// console.log(fruitsToUpperCase)
+
 const fruits = ['яблоко', 'ананас', 'груша'];
 
-const fruitsToUpperCase = fruits.toString().toUpperCase().split(',');
-console.log(fruitsToUpperCase)
+const fruitsToUpperCase = (prop) => {
+    prop.map(function (item) {
+        console.log(item.toUpperCase())
+    })
+}
 
 // task-5 
-let addOneForAll = (...params) => {
-    let newArr = [];
-    for (let i = 0; i < params.length; i++) {
-        newArr.push(params[i] + 1);
-    }
-    console.log(newArr)
+const addOneForAll = (...prop) => {
+    prop.map(function (item) {
+        console.log(item += 1)
+    })
 }
 
-addOneForAll(1, 2, 3, 4)
 
-// task 6
-let getSum = (...params) => {
+// task 6, не понял как вернуть функции полученное значение :С Получается вывести сумму сохраненную в локальную переменную sum... Дальше мозг отказал)
+const getSum = (...prop) => {
     let sum = 0;
-    for (let i = 0; i < params.length; i++) {
-        sum += params[i];
-    }
+    prop.forEach((item) => sum += item)
     console.log(sum)
 }
-getSum(1, 2, 3, 4, 5, 6)
 
-//task-7 
+//task-7  
 const originArr = [1, 'hello', 2, 3, 4, '5', '6', 7, null];
-const newArr = originArr.filter(element => typeof (element) === 'number')
-console.log(newArr)
+
+const newArr = (...prop) => {
+    return console.log(prop.filter(element => typeof (element) === 'number'))
+}
+
+
 
 // task-8
-//  тут я не смог, не могу понять как передать массив в аргумент при вызове функции(((
 
-const valueArr = ['123', '', null, false, undefined, NaN, 3, 1, {}, [], ];
+const valueArr = ['123', '', null, false, undefined, NaN, 3, 1, {},
+    [],
+];
 let haveTrueValue = (...prop) => {
     let controlValue = 0;
     for (let i = 0; i < prop.length; i++) {
@@ -72,5 +82,3 @@ let haveTrueValue = (...prop) => {
         console.log(`Количество ложных значений: ${controlValue} `)
     } else console.log('Все значение правдивы')
 }
-
-haveTrueValue(...valueArr)
