@@ -58,7 +58,7 @@ console.log(newArr)
 // task-8
 //  тут я не смог, не могу понять как передать массив в аргумент при вызове функции(((
 
-const valueArr = ['123', 1, 3, 1];
+const valueArr = ['123', '', null, false,  3, 1];
 let haveTrueValue = (...prop) => {
     let controlValue = 0;
     for (let i = 0; i < prop.length; i++) {
@@ -69,7 +69,7 @@ let haveTrueValue = (...prop) => {
         }
     }
     if (controlValue >= 1) {
-        console.log('Есть ложное значение')
+        console.log(`Количество ложных значений: ${controlValue} `)
     } else console.log('Все значение правдивы')
 }
 
