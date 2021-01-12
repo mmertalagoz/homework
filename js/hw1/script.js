@@ -45,16 +45,11 @@ console.log(sayHelloValue);
 
 
 // task-4
-// не могу понять, почему ретерн работает только в однострочном выражении
-const fruits = ['яблоко', 'ананас', 'груша'];
 
-const fruitsToUpperCase = (prop) => {
-    return prop.map(item => item.toUpperCase())
-}
-
-const upperFruits = fruitsToUpperCase(fruits);
-console.log(upperFruits)
-
+let fruit = ["яблоко", "ананас", "груша"];
+let fruitUpperCase = fruit.toString().toLocaleUpperCase();
+fruitUpperCaseMassiv = fruitUpperCase.split(",");
+console.log(fruitUpperCaseMassiv);
 
 
 
