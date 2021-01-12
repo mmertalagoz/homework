@@ -1,20 +1,19 @@
 'use strict';
 
-// task-1
-// const vegArr = 
-// [
-//     'Капуста',
-//     'Репа',
-//     'Редиска',
-//     'Морковка',
-// ]
+// task - 1
+const vegArr = [
+    'Капуста',
+    'Репа',
+    'Редиска',
+    'Морковка',
+]
 
-// let joinNames = (...prop) => {
-//     return prop.join(' | ')
-// }
+let joinNames = (...prop) => {
+    return prop.join(' | ')
+}
 
-// const newArr = joinNames(...vegArr)
-// console.log(newArr);
+const newArr = joinNames(...vegArr)
+console.log(newArr);
 
 
 
@@ -50,7 +49,7 @@ console.log(sayHelloValue);
 const fruits = ['яблоко', 'ананас', 'груша'];
 
 const fruitsToUpperCase = (prop) => {
-    return prop.map(item => item.toUpperCase()) 
+    return prop.map(item => item.toUpperCase())
 }
 
 const upperFruits = fruitsToUpperCase(fruits);
@@ -108,7 +107,7 @@ let haveTrueValue = (...prop) => {
         (Boolean(item) === false) ? controlValue += 1: controlValue += 0
     });
 
-    let out =  (controlValue >= 1) ? `Количество ложных значений: ${controlValue} ` : 'Все значение правдивы';
+    let out = (controlValue >= 1) ? `Количество ложных значений: ${controlValue} ` : 'Все значение правдивы';
     return out
 }
 
