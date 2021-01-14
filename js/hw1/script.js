@@ -55,6 +55,12 @@ const fruitsToUpperCase = (prop) => {
 const upperFruits = fruitsToUpperCase(fruits);
 console.log(upperFruits)
 
+//or
+
+let fruit = ["яблоко", "ананас", "груша"];
+let upperFruit = fruit.map((item) => item.toUpperCase());
+console.log(upperFruit); 
+
 
 
 
